@@ -1,5 +1,6 @@
 package com.reillyhe.leetcodeanwser
 
+import com.reillyhe.leetcodeanwser.lrucache.LRUCache
 import com.reillyhe.leetcodeanwser.randomcp.Node
 import com.reillyhe.leetcodeanwser.randomcp.RandomCopy
 import com.reillyhe.leetcodeanwser.twosum.TwoSum
@@ -85,5 +86,48 @@ class ExampleUnitTest {
         val copiedNode = RandomCopy.copyRandomList(node)
         val copiedInfo = copiedNode!!.info()
         assertEquals(info, copiedInfo)
+    }
+
+    @Test
+    fun lrucache_normal_test() {
+        val cache = LRUCache(2)
+        cache.put(1,1)
+        cache.put(2,2)
+        val anwser1 = "{[2:2][1:1]}"
+        assertEquals(anwser1, cache.dumpCacheInPriority())
+        val value1 = cache.get(1)
+        assertEquals(1, value1)
+        val anwser2 = "{[1:1][2:2]}"
+        assertEquals(anwser2, cache.dumpCacheInPriority())
+    }
+
+    @Test
+    fun lrucache_resize_test() {
+        val cache = LRUCache(3)
+        cache.put(1,1)
+        cache.put(2,2)
+        cache.put(3,3)
+        cache.put(4,4)
+
+        cache.get(4)
+        cache.get(3)
+        cache.get(2)
+        cache.get(1)
+        //2->3->4
+        cache.put(5,5)
+        //5->2->3
+
+        cache.get(1)
+        //5->2->3
+        cache.get(2)
+        //2->5->3
+        cache.get(3)
+        //3->2->5
+        val v = cache.get(4)
+        cache.get(5)
+        //5->3->2
+        val anwser1 = "{[5:5][3:3][2:2]}"
+        assertEquals(anwser1, cache.dumpCacheInPriority())
+        assertEquals(-1, v)
     }
 }
