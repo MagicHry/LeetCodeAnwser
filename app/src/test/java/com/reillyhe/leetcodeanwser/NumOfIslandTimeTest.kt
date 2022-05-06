@@ -1,8 +1,18 @@
 package com.reillyhe.leetcodeanwser
 import com.reillyhe.leetcodeanwser.island.NumOfIsland
+import com.reillyhe.leetcodeanwser.island.NumOfIslandTimeConsumingSolu
 import org.junit.Test
 import org.junit.Assert.*
-class NumOfIslandTest {
+class NumOfIslandTimeTest {
+
+    @Test
+    fun str_test() {
+        val str = "12-25"
+        val first = str.split('-')[0].toInt()
+        val sec = str.split('-')[1].toInt()
+        assertEquals(12,first)
+        assertEquals(25,sec)
+    }
 
     @Test
     fun num_of_island_simple_test() {
