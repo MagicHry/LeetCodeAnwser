@@ -26,7 +26,6 @@ object RobotBounded {
                 }
             }
             //检查是否满足情况
-            println("after iteration : $iter now vector looks like -> $originVec and direction -> $curDirection")
             if (originVec.returnToOrigin() && curDirection == Direction.NORTH) return true
             iter++
         }

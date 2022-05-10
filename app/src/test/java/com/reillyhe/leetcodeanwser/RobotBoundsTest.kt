@@ -20,7 +20,7 @@ class RobotBoundsTest {
 
     @Test
     fun robot_bound_mid_test1() {
-        val should = false
+        val should = true
         var ret = RobotBounded.isRobotBounded("GLGLGRGRR")
         assertEquals(should, ret)
     }
@@ -29,6 +29,13 @@ class RobotBoundsTest {
     fun robot_bound_mid_test2() {
         val should = true
         var ret = RobotBounded.isRobotBounded("GL")
+        assertEquals(should, ret)
+    }
+
+    @Test
+    fun robot_bound_hard_test1() {
+        val should = true
+        var ret = RobotBounded.isRobotBounded("GRGRGGRGGLLG")
         assertEquals(should, ret)
     }
 }
