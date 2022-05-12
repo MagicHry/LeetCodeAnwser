@@ -1,5 +1,7 @@
 package com.reillyhe.leetcodeanwser.sort
 
+import java.util.concurrent.CopyOnWriteArrayList
+
 /**
  * 公式：
  *  - 对于某个元素A,index=i
