@@ -1,6 +1,7 @@
 package com.reillyhe.leetcodeanwser
 
-import com.reillyhe.leetcodeanwser.wordbreak.WordBreak
+import com.reillyhe.leetcodeanwser.wordbreak.WordBreakBadSolution
+import com.reillyhe.leetcodeanwser.wordbreak.WordBreakDP
 import org.junit.Test
 import org.junit.Assert.*
 class WordBreakTest {
@@ -10,7 +11,7 @@ class WordBreakTest {
         val word = mutableListOf<String>(
             "leet","code"
         )
-        val ret = WordBreak.wordBreak("leetcode", word)
+        val ret = WordBreakDP.wordBreak("leetcode", word)
         assertEquals(true, ret)
     }
 
@@ -19,7 +20,7 @@ class WordBreakTest {
         val word = mutableListOf<String>(
             "cat","sand","dogee","cats","an"
         )
-        val ret = WordBreak.wordBreak("catsandogee", word)
+        val ret = WordBreakDP.wordBreak("catsandogee", word)
         assertEquals(true, ret)
     }
 
@@ -30,7 +31,7 @@ class WordBreakTest {
         val word = mutableListOf<String>(
             "cc","bc","ac","ca"
         )
-        val ret = WordBreak.wordBreak("acccbccb", word)
+        val ret = WordBreakDP.wordBreak("acccbccb", word)
         assertEquals(false, ret)
     }
 
@@ -39,7 +40,7 @@ class WordBreakTest {
         val word = mutableListOf<String>(
             "a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"
         )
-        val ret = WordBreak.wordBreak("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", word)
+        val ret = WordBreakDP.wordBreak("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", word)
         assertEquals(false, ret)
     }
 }

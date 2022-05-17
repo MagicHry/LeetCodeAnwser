@@ -1,6 +1,6 @@
 package com.reillyhe.leetcodeanwser.wordbreak
 
-object WordBreak {
+object WordBreakBadSolution {
 
     /**
      * 核心思路是：我们不需要一步一步的进行迭代，我们可以以击中字典的substr为步长进行迭代
